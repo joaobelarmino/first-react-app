@@ -5,7 +5,6 @@ function ExpenseItem(props) {
   const month = props.date.toLocaleString('pt-BR', {month: 'long'});
   const year = props.date.getFullYear();
 
-  
   return (
     <div className="expense-item">
       <div className="expense-item__date">
