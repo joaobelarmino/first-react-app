@@ -4,21 +4,7 @@
   align-items: center;
   margin: 1rem 0;
   padding: 0.5rem;
-  border-radius: 7px;
   background-color: #8257e5;
-  box-shadow: 5px 4px 5px -3px #353232;
-}
-
-.expense-item__date {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 7px;
-  padding: 0.3rem;
-  background: #04d361;
-  font-weight: bold;
 }
 
 .expense-item__description {
@@ -39,14 +25,12 @@
 .expense-item__price {
   font-weight: 700;
   background-color: #04d361;
-  border: 1px solid transparent;
   padding: 0.5rem 2rem;
-  border-radius: 12px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .expense-item {
-    width: 50%;
+    width: 80%;
     margin: 1rem auto;
   }
 
