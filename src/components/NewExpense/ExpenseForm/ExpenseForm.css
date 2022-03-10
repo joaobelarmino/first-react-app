@@ -1,0 +1,74 @@
+.form-expense {
+  display: flex;
+  justify-content: center;
+}
+
+.form-expense__controls {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.form-expense__controls--action {
+  width: 50%;
+}
+
+.form-expense__control {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  font-weight: bold;
+}
+
+.label-name {
+  position: absolute;
+  width: 570px;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+  border-bottom: 1px solid #353232;
+  overflow: hidden;
+}
+
+.label-name::after {
+  content: "";
+  border-bottom: 3px solid #04d361;
+  position: absolute;
+  width: 570px;
+  height: 100%;
+  bottom: -1px;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all .3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all .3s ease;
+}
+
+.form-expense__control input{
+  width: 80%;
+  padding: 15px 5px 5px 0px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.form-expense__control input:focus + .label-name .content-name,
+.form-expense__control input:not(:placeholder-shown) + .label-name .content-name {
+  transform: translateY(-100%);
+  font-size: 14px;
+  color: #04d361;
+}
+
+.form-expense__control input:focus + .label-name::after,
+.form-expense__control input:not(:placeholder-shown) + .label-name::after {
+  transform: translateX(0%);
+}
