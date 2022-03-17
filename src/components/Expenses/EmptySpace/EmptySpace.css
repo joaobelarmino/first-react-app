@@ -1,0 +1,16 @@
+.empty-space {
+  text-align: center;
+  color: #04d361;
+}
+
+.empty-space img {
+  width: 250px;
+}
+
+.empty-space__title {
+  font-size: 2.5rem;
+}
+
+.empty-space__text {
+  font-size: 1.5rem;
+}

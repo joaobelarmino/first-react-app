@@ -1,34 +1,49 @@
 import React, { useState } from "react";
 import Card from "../../UI/Card/Card";
+import EmptySpace from "../EmptySpace/EmptySpace";
 import ExpensesFilter from "../ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./ExpenseGroup.css";
 
 const ExpenseGroup = (props) => {
-  const [filteredYear, setFilteredYear] = useState('2022');
+  const [filteredYear, setFilteredYear] = useState('');
+
   const addFilterHandler = (targetFilter) => {
     setFilteredYear(targetFilter);
-  }
+  };
 
   return (
     <>
-      <ExpensesFilter selected={filteredYear} onFilter={addFilterHandler} />
       <Card className="expenses">
-        <ExpenseItem
-          title={props.expense[0].title}
-          amount={props.expense[0].amount}
-          date={props.expense[0].date}
-        />
-        <ExpenseItem
-          title={props.expense[1].title}
-          amount={props.expense[1].amount}
-          date={props.expense[1].date}
-        />
-        <ExpenseItem
-          title={props.expense[2].title}
-          amount={props.expense[2].amount}
-          date={props.expense[2].date}
-        />
+        {props.expense == "" ? (
+          <EmptySpace />
+        ) : (
+          <>
+            <ExpensesFilter
+              selected={filteredYear}
+              onFilter={addFilterHandler}
+            />
+            {filteredYear == '' ? (
+              props.expense.map((item) => (
+                <ExpenseItem
+                  key={item.id}
+                  title={item.title}
+                  amount={item.amount}
+                  date={item.date}
+                />
+              ))) : (
+              props.expense.map((item) =>
+                item.date.getFullYear() == filteredYear ? (
+                  <ExpenseItem
+                    key={item.id}
+                    title={item.title}
+                    amount={item.amount}
+                    date={item.date}
+                  />
+                ) : ''
+              ))}
+          </>
+        )}
       </Card>
     </>
   );

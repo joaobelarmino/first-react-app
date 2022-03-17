@@ -33,11 +33,11 @@ const ExpenseForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
+    const originalDate = new Date(date);
     const newExpenseData = {
       title: title,
       amount: amount,
-      date: new Date(date),
+      date: new Date(originalDate.valueOf() + originalDate.getTimezoneOffset() * 60000),
     };
 
     props.onSaveNewExpense(newExpenseData);
@@ -77,7 +77,7 @@ const ExpenseForm = (props) => {
           <label className="label-name">Data:</label>
           <input type="date" value={date} onChange={dateChangeHandler} />
         </div>
-        <div className="form-expense__control">
+        <div className="form-expense__control action">
           <button className="form-expense__controls--action">Adicionar</button>
         </div>
       </div>

@@ -1,37 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ExpenseGroup from "./components/Expenses/ExpenseGroup/ExpenseGroup";
 import NewExpense from './components/NewExpense/NewExpense/NewExpense';
 
+const reg_expenses = [
+  {
+    id: 1,
+    title: 'Livro',
+    amount: 75.5,
+    date: new Date(2020, 2, 20)
+  },
+  {
+    id: 2,
+    title: 'Livro dois',
+    amount: 75.5,
+    date: new Date(2022, 2, 20)
+  },
+];
+
 const App = () => {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e2",
-      title: "New Amazing TV",
-      amount: 799.49,
-      date: new Date(2021, 2, 12),
-    },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+  const [expenses, setExpenses] = useState(reg_expenses);
 
   const addExpenseHandler = (newExpense) => {
-    expenses.push(newExpense);
+    setExpenses(prevExpenses => {
+      return [newExpense, ...prevExpenses]
+    });
   }
 
   return (
