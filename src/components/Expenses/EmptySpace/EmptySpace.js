@@ -6,7 +6,7 @@ import emptySpace from "../../../images/empty-space.svg";
 const EmptySpace = () => {
   return (
     <div className="empty-space">
-      <img src={emptySpace} alt="teste" />
+      <img src={emptySpace} alt="Prancheta vazia" />
       <h1 className="empty-space__title">
         Ooopa! Parece que ainda não existem registros por aqui :C
       </h1>
