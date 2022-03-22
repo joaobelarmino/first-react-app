@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Card from "../../UI/Card/Card";
 import EmptySpace from "../EmptySpace/EmptySpace";
 import ExpensesFilter from "../ExpenseFilter/ExpenseFilter";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import EmptyFilter from "../EmptyFilter/EmptyFilter";
+import ExpenseList from "../ExpenseList/ExpenseList";
 import "./ExpenseGroup.css";
 
 const ExpenseGroup = (props) => {
@@ -23,7 +22,7 @@ const ExpenseGroup = (props) => {
   return (
     <>
       <Card className="expenses">
-        {props.expense == "" ? (
+        {props.expense === "" ? (
           <EmptySpace />
         ) : (
           <>
@@ -31,17 +30,7 @@ const ExpenseGroup = (props) => {
               selected={filteredYear}
               onFilter={addFilterHandler}
             />
-            {filteredExpenses.length === 0 ? (
-              <EmptyFilter />
-            )
-            : (filteredExpenses.map((item) => (
-                <ExpenseItem
-                  key={item.id}
-                  title={item.title}
-                  amount={item.amount}
-                  date={item.date}
-                />
-              )))}
+            <ExpenseList expenses={filteredExpenses} />
           </>
         )}
       </Card>
