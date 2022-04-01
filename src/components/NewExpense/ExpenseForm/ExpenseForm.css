@@ -12,8 +12,9 @@
 }
 
 .form-expense__controls--action {
-  width: 82%;
-  height: 100%;
+  width: 45%;
+  max-width: 100%;
+  height: 35px;
   outline: none;
   border-radius: 5px;
   border: none;
@@ -25,16 +26,22 @@
   text-transform: uppercase;
   font-family: 'Metropolis', sans-serif;
   transition: all ease .5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-expense__controls--action:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 .form-expense__controls--action:hover {
-  color: #04d361;
-  background-color: #353232;
+  color: #8257e5;
+  background-color: #121214;
 }
 
 .form-expense__control {
   width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -79,7 +86,9 @@
 }
 
 .action {
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 570px;
 }
 
 .form-expense__control input:focus + .label-name .content-name,
@@ -92,4 +101,8 @@
 .form-expense__control input:focus + .label-name::after,
 .form-expense__control input:not(:placeholder-shown) + .label-name::after {
   transform: translateX(0%);
+}
+
+.expense-date-input {
+  border: 0;
 }

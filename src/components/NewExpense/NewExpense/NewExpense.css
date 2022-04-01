@@ -4,3 +4,9 @@
   margin: 2rem;
   width: 95%;
 }
+
+.new-expense-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

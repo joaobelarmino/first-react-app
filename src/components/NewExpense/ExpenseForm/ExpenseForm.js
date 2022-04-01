@@ -55,6 +55,7 @@ const ExpenseForm = (props) => {
             placeholder=" "
             value={title}
             onChange={titleChangeHandler}
+            required
           />
           <label className="label-name">
             <span className="content-name"> Título: </span>
@@ -68,16 +69,18 @@ const ExpenseForm = (props) => {
             placeholder=" "
             value={amount}
             onChange={amountChangeHandler}
+            required
           />
           <label className="label-name">
             <span className="content-name"> Preço: </span>
           </label>
         </div>
         <div className="form-expense__control">
-          <label className="label-name">Data:</label>
-          <input type="date" value={date} onChange={dateChangeHandler} />
+          <label className="label-name expense-date-input">Data:</label>
+          <input required type="date" value={date} onChange={dateChangeHandler} />
         </div>
         <div className="form-expense__control action">
+          <a className="form-expense__controls--action" onClick={props.onCancel}>Cancelar</a>
           <button className="form-expense__controls--action">Adicionar</button>
         </div>
       </div>
