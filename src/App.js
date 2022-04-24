@@ -12,7 +12,7 @@ const reg_expenses = [
   {
     id: 2,
     title: 'Livro dois',
-    amount: 75.5,
+    amount: 25.1,
     date: new Date(2022, 2, 20)
   },
 ];

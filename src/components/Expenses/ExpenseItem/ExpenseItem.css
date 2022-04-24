@@ -30,7 +30,6 @@
 
 @media screen and (min-width: 768px) {
   .expense-item {
-    width: 80%;
     margin: 1rem auto;
   }
 

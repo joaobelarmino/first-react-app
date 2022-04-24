@@ -3,6 +3,7 @@ import Card from "../../UI/Card/Card";
 import EmptySpace from "../EmptySpace/EmptySpace";
 import ExpensesFilter from "../ExpenseFilter/ExpenseFilter";
 import ExpenseList from "../ExpenseList/ExpenseList";
+import ExpensesChart from "../ExpensesChart/ExpensesChart";
 import "./ExpenseGroup.css";
 
 const ExpenseGroup = (props) => {
@@ -22,17 +23,20 @@ const ExpenseGroup = (props) => {
   return (
     <>
       <Card className="expenses">
-        {props.expense === "" ? (
-          <EmptySpace />
-        ) : (
-          <>
-            <ExpensesFilter
-              selected={filteredYear}
-              onFilter={addFilterHandler}
-            />
-            <ExpenseList expenses={filteredExpenses} />
-          </>
-        )}
+        <div className="container-content">
+          {props.expense === "" ? (
+            <EmptySpace />
+          ) : (
+            <>
+              <ExpensesFilter
+                selected={filteredYear}
+                onFilter={addFilterHandler}
+              />
+              <ExpensesChart expense={filteredExpenses}/>
+              <ExpenseList expenses={filteredExpenses} />
+            </>
+          )}
+        </div>
       </Card>
     </>
   );

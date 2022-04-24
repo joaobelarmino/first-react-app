@@ -13,3 +13,8 @@ ul, li, ol {
   list-style-type: none;
   margin: 0;
 }
+
+.container-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}

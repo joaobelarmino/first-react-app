@@ -36,7 +36,7 @@ const ExpenseForm = (props) => {
     const originalDate = new Date(date);
     const newExpenseData = {
       title: title,
-      amount: amount,
+      amount: +amount,
       date: new Date(originalDate.valueOf() + originalDate.getTimezoneOffset() * 60000),
     };
 
