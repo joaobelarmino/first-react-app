@@ -1,0 +1,12 @@
+.new-expense {
+  padding: 1rem;
+  background-color: #8257e5;
+  margin: 2rem;
+  width: 95%;
+}
+
+.new-expense-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
